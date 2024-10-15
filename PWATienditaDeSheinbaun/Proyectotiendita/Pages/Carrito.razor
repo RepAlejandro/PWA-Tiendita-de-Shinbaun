@@ -1,0 +1,144 @@
+﻿@page "/carrito"
+@inherits LayoutComponentBase
+
+<div class="container-fluid">
+    <h1 class="text-center display-3">Carrito de Compras</h1>
+
+    <div class="row row-cols-2">
+        <div class="col-md-7">
+            <h2 class="text-center mt-3"><small class="text-body-secondary">Lista de Productos</small></h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">Imagen</th>
+                        <th scope="col" class="text-center">Nombre</th>
+                        <th scope="col" class="text-center">Cantidad</th>
+                        <th scope="col" class="text-center">Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Productos)
+                    {
+                        <tr class="mx-auto">
+                            <th scope="row" class="w-25 border-1">
+                                <img src="@producto.Imagen" class="rounded float-start w-75 border-1" />
+                            </th>
+                            <td class="text-center border-1">@producto.Nombre</td>
+                            <td class="border-1">
+                                <div class="d-flex align-items-center justify-content-center btn-group">
+                                    <button class="d-flex border-0" type="button" @onclick="() => ChangeQuantity(producto, -1)">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="form-control text-center border-1 p-1 w-25" min="1" max="5" value="@producto.Cantidad" readonly />
+                                    <button class=" d-flex  border-0" type="button" @onclick="() => ChangeQuantity(producto, 1)">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div> 
+                                <div class="text-center mt-2">
+                                    <a class="btn btn-danger" @onclick="() => ToggleCollapse(producto)" role="button">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                    <div class="collapse mt-2 @(producto.IsCollapsed ? "show" : "")" id="collapse-@producto.Nombre">
+                                        <div class="card card-body border-danger rounded">
+                                            <p>Está seguro de eliminar el producto?</p>
+                                            <div class="d-flex align-items-center justify-content-center btn-group">
+                                                <button class=" btn-secondary m-1" @onclick="() => ToggleCollapse(producto)">Cerrar</button>
+                                                <button class=" btn-danger" type="button" @onclick="() => EliminarProducto(producto)">ELiminar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td class="text-center border-1 p-1">@Costoproducto(producto).ToString("C")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4 ms-3 rounded border shadow">
+            <h2 class="text-center mt-3"><small class="text-body-secondary">Resumen del Pedido</small></h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between p-2">
+                    <h3>Subtotal:</h3>
+                    <span class="h4"><mark>@TotalSubtotal.ToString("F2")</mark></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between p-2">
+                    <h3>I.V.A:</h3>
+                    <span class="h4"><mark>@TotalIVA.ToString("F2")</mark></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between p-2">
+                    <h3>Envio:</h3>
+                    <span class="h4"><mark>@Envio.ToString("F2")</mark></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between p-2">
+                    <h3>Descuento:</h3>
+                    <span class="h4"><mark>@DescuentoTotal().ToString("F2")</mark></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between p-2">
+                    <h3>Total:</h3>
+                    <span class="h4"><mark>@TotalCompra.ToString("F2")</mark></span>
+                </li>
+            </ul>
+
+            <div class="d-md-flex justify-content-center mt-3 p-1">
+                <Paypalbutton />
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    // Clase Producto
+    public class Producto
+    {
+        public string Imagen { get; set; }
+        public string Nombre { get; set; }
+        public decimal PrecioUnitario { get; set; }
+        public int Cantidad { get; set; } = 1;
+        public bool IsCollapsed { get; set; } = false;
+
+    }
+
+    // Lista de productos
+    private List<Producto> Productos = new List<Producto>
+    {
+        new Producto { Imagen = "../img/camiseta.png", Nombre = "Producto 1", PrecioUnitario = 50.00m },
+        new Producto { Imagen = "../img/pantalon.jpg", Nombre = "Producto 2", PrecioUnitario = 30.00m },
+        new Producto { Imagen = "../img/calcetines.jpg", Nombre = "Producto 3", PrecioUnitario = 20.00m }
+    };
+    // Cálculo de totales
+    private decimal Costoproducto(Producto p) => p.Cantidad * p.PrecioUnitario;
+    private decimal TotalSubtotal => Productos.Sum(Costoproducto);
+    private decimal TotalIVA => TotalSubtotal * 0.10m;
+    private decimal Envio => 25.50m;
+    private decimal TotalCompra => TotalSubtotal + TotalIVA + Envio;
+  
+
+    private void ChangeQuantity(Producto producto, int change)
+    {
+        var nuevaCantidad = producto.Cantidad + change;
+        if (nuevaCantidad >= 1 && nuevaCantidad <= 5)
+        {
+            producto.Cantidad = nuevaCantidad;
+        }
+    }
+
+    private void ToggleCollapse(Producto producto)
+    {
+        producto.IsCollapsed = !producto.IsCollapsed; // Cambiar el estado del colapso
+    }
+
+    private void EliminarProducto(Producto producto)
+    {
+        Productos.Remove(producto);
+    }
+ 
+
+    private decimal DescuentoTotal()
+    {
+        return Productos.Where(p => p.Cantidad >= 3)
+                        .Sum(p => Costoproducto(p) * 0.10m);
+    }
+}
