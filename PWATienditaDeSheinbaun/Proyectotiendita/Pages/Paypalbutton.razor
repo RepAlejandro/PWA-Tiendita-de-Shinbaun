@@ -1,0 +1,16 @@
+﻿@page "/Paypalbutton"
+@inject IJSRuntime JSRuntime
+
+<div id="paypal-button-container"></div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Llama a la función de JavaScript para inicializar el botón de PayPal
+            await JSRuntime.InvokeVoidAsync("initPayPalButton", "/demo/checkout/api/paypal/order/create/", "/demo/checkout/api/paypal/order/");
+        }
+    }
+
+}
