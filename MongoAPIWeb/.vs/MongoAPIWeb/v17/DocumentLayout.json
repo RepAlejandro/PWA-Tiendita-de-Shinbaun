@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|c:\\users\\rdjrr\\source\\repos\\mongoapiweb\\mongoapiweb\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|solutionrelative:mongoapiweb\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|c:\\users\\rdjrr\\source\\repos\\mongoapiweb\\mongoapiweb\\repositories\\productcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|solutionrelative:mongoapiweb\\repositories\\productcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|c:\\users\\rdjrr\\source\\repos\\mongoapiweb\\mongoapiweb\\repositories\\iproductcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|solutionrelative:mongoapiweb\\repositories\\iproductcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|c:\\users\\rdjrr\\source\\repos\\mongoapiweb\\mongoapiweb\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|solutionrelative:mongoapiweb\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|c:\\users\\rdjrr\\source\\repos\\mongoapiweb\\mongoapiweb\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|solutionrelative:mongoapiweb\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|c:\\users\\rdjrr\\source\\repos\\mongoapiweb\\mongoapiweb\\repositories\\mongodbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F034A590-4266-4D9A-8534-EA25B0E1DF43}|MongoAPIWeb\\MongoAPIWeb.csproj|solutionrelative:mongoapiweb\\repositories\\mongodbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "MongoAPIWeb\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Properties\\launchSettings.json",
+              "RelativeToolTip": "MongoAPIWeb\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-20T00:53:40.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "MongoAPIWeb\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "MongoAPIWeb\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T00:20:48.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductCollection.cs",
+              "DocumentMoniker": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Repositories\\ProductCollection.cs",
+              "RelativeDocumentMoniker": "MongoAPIWeb\\Repositories\\ProductCollection.cs",
+              "ToolTip": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Repositories\\ProductCollection.cs",
+              "RelativeToolTip": "MongoAPIWeb\\Repositories\\ProductCollection.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T23:49:58.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IProductCollection.cs",
+              "DocumentMoniker": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Repositories\\IProductCollection.cs",
+              "RelativeDocumentMoniker": "MongoAPIWeb\\Repositories\\IProductCollection.cs",
+              "ToolTip": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Repositories\\IProductCollection.cs",
+              "RelativeToolTip": "MongoAPIWeb\\Repositories\\IProductCollection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T23:49:35.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MongoDBRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Repositories\\MongoDBRepository.cs",
+              "RelativeDocumentMoniker": "MongoAPIWeb\\Repositories\\MongoDBRepository.cs",
+              "ToolTip": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Repositories\\MongoDBRepository.cs",
+              "RelativeToolTip": "MongoAPIWeb\\Repositories\\MongoDBRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T23:41:55.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "MongoAPIWeb\\Models\\Products.cs",
+              "ToolTip": "C:\\Users\\rdjrr\\source\\repos\\MongoAPIWeb\\MongoAPIWeb\\Models\\Products.cs",
+              "RelativeToolTip": "MongoAPIWeb\\Models\\Products.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T23:39:19.417Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
