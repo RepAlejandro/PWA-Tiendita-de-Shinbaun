@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Proyectotiendita")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+557c0893158fd6285f8c0e6283bfb38e75c8176f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33f4ae52decb555f78654281cda12d775f302471")]
 [assembly: System.Reflection.AssemblyProductAttribute("Proyectotiendita")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Proyectotiendita")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,9 @@
 ﻿@page "/carrito"
+@using Blazored.LocalStorage
+@using MongoAPIWeb.Model
 @inherits LayoutComponentBase
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager
 
 <div class="container-fluid">
     <h1 class="text-center display-3">Carrito de Compras</h1>
@@ -16,44 +20,65 @@
                         <th scope="col" class="text-center">Precio</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach (var producto in Productos)
-                    {
-                        <tr class="mx-auto">
-                            <th scope="row" class="w-25 border-1">
-                                <img src="@producto.Imagen" class="rounded float-start w-75 border-1" />
-                            </th>
-                            <td class="text-center border-1">@producto.Nombre</td>
-                            <td class="border-1">
-                                <div class="d-flex align-items-center justify-content-center btn-group">
-                                    <button class="d-flex border-0" type="button" @onclick="() => ChangeQuantity(producto, -1)">
-                                        <i class="bi bi-dash"></i>
-                                    </button>
-                                    <input type="number" class="form-control text-center border-1 p-1 w-25" min="1" max="5" value="@producto.Cantidad" readonly />
-                                    <button class=" d-flex  border-0" type="button" @onclick="() => ChangeQuantity(producto, 1)">
-                                        <i class="bi bi-plus"></i>
-                                    </button>
-                                </div> 
-                                <div class="text-center mt-2">
-                                    <a class="btn btn-danger" @onclick="() => ToggleCollapse(producto)" role="button">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                    <div class="collapse mt-2 @(producto.IsCollapsed ? "show" : "")" id="collapse-@producto.Nombre">
-                                        <div class="card card-body border-danger rounded">
-                                            <p>Está seguro de eliminar el producto?</p>
-                                            <div class="d-flex align-items-center justify-content-center btn-group">
-                                                <button class=" btn-secondary m-1" @onclick="() => ToggleCollapse(producto)">Cerrar</button>
-                                                <button class=" btn-danger" type="button" @onclick="() => EliminarProducto(producto)">ELiminar</button>
+                @if (Productos == null || !Productos.Any())
+                {
+                    <p>No hay productos en el carrito.</p>
+                }
+                else
+                {
+                    <tbody>
+                        @foreach (var item in Productos)
+                        {
+                            if (item?.Product == null)
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center text-danger">Producto no disponible</td>
+                                </tr>
+                                continue; // Salta al siguiente ítem si es nulo
+                            }
+                            <tr class="mx-auto">
+                                <th scope="row" class="w-25 border-1">
+                                    <img src="@item.Product.Imagen" class="rounded float-start w-75 border-1" />
+                                </th>
+                                <td class="text-center border-1">@item.Product.NombreP</td>
+                                <td class="border-1">
+                                    <div class="d-flex align-items-center justify-content-center btn-group">
+                                        <button class="d-flex border-0" type="button" @onclick="() => ChangeQuantity(item, -1)">
+                                            <i class="bi bi-dash"></i>
+                                        </button>
+                                        <input type="number" class="form-control text-center border-1 w-25" min="1" max="5" value="@item.Cantidad" readonly />
+                                        <button class="d-flex border-0" type="button" @onclick="() => ChangeQuantity(item, 1)">
+                                            <i class="bi bi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="p-2">
+                                        <button class="btn-danger d-flex mx-auto align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Producto</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="display-6">Estas Seguro de Eliminar el Producto?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" @onclick="() => borrar(item)">Eliminar</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                            </td>
-                            <td class="text-center border-1 p-1">@Costoproducto(producto).ToString("C")</td>
-                        </tr>
-                    }
-                </tbody>
+                                </td>
+                                <td class="text-center border-1 p-1">@Costoproducto(item).ToString("C")</td>
+                            </tr>
+                        }
+                    </tbody>
+                }
             </table>
         </div>
 
@@ -81,64 +106,102 @@
                     <span class="h4"><mark>@TotalCompra.ToString("F2")</mark></span>
                 </li>
             </ul>
-
             <div class="d-md-flex justify-content-center mt-3 p-1">
-                <Paypalbutton />
+                <a class="btn btn-primary" @onclick="IrAlCheckout">Ir al checkout</a>
             </div>
         </div>
     </div>
 </div>
 
 @code {
-    // Clase Producto
-    public class Producto
-    {
-        public string Imagen { get; set; }
-        public string Nombre { get; set; }
-        public decimal PrecioUnitario { get; set; }
-        public int Cantidad { get; set; } = 1;
-        public bool IsCollapsed { get; set; } = false;
+    [Inject] private ILocalStorageService LocalStorageService { get; set; }
 
+    private List<CartItem> Productos = new List<CartItem>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Obtén los productos del carrito desde el almacenamiento local
+        var cart = await LocalStorageService.GetItemAsync<List<CartItem>>("cart");
+        if (cart != null)
+        {
+            Productos = cart.Where(item => item?.Product != null).ToList();
+        }
+        else
+        {
+            Productos = new List<CartItem>();
+        }
     }
 
-    // Lista de productos
-    private List<Producto> Productos = new List<Producto>
-    {
-        new Producto { Imagen = "../img/camiseta.png", Nombre = "Producto 1", PrecioUnitario = 50.00m },
-        new Producto { Imagen = "../img/pantalon.jpg", Nombre = "Producto 2", PrecioUnitario = 30.00m },
-        new Producto { Imagen = "../img/calcetines.jpg", Nombre = "Producto 3", PrecioUnitario = 20.00m }
-    };
-    // Cálculo de totales
-    private decimal Costoproducto(Producto p) => p.Cantidad * p.PrecioUnitario;
+    private decimal Costoproducto(CartItem item) => item.Cantidad * (decimal)item.Product.Precio;
+
     private decimal TotalSubtotal => Productos.Sum(Costoproducto);
     private decimal TotalIVA => TotalSubtotal * 0.10m;
     private decimal Envio => 25.50m;
     private decimal TotalCompra => TotalSubtotal + TotalIVA + Envio;
-  
 
-    private void ChangeQuantity(Producto producto, int change)
+    private void ChangeQuantity(CartItem item, int change)
     {
-        var nuevaCantidad = producto.Cantidad + change;
+        var nuevaCantidad = item.Cantidad + change;
         if (nuevaCantidad >= 1 && nuevaCantidad <= 5)
         {
-            producto.Cantidad = nuevaCantidad;
+            item.Cantidad = nuevaCantidad;
+            SaveCart();
         }
     }
 
-    private void ToggleCollapse(Producto producto)
+    private async Task SaveCart()
     {
-        producto.IsCollapsed = !producto.IsCollapsed; // Cambiar el estado del colapso
+        var cartData = new
+        {
+            Productos,
+            TotalCompra = TotalCompra.ToString("F2")
+        };
+
+        await LocalStorageService.SetItemAsync("cartData", cartData);
     }
 
-    private void EliminarProducto(Producto producto)
+    private void borrar(CartItem item)
     {
-        Productos.Remove(producto);
+        Productos.Remove(item);
+        SaveCart();
     }
- 
 
     private decimal DescuentoTotal()
     {
         return Productos.Where(p => p.Cantidad >= 3)
                         .Sum(p => Costoproducto(p) * 0.10m);
     }
+
+    private async Task IrAlCheckout()
+    {
+        // Obtiene el carrito desde LocalStorage
+        var cart = await LocalStorageService.GetItemAsync<List<CartItem>>("cart");
+
+        if (cart != null && cart.Any())
+        {
+            foreach (var cartItem in cart)
+            {
+                try
+                {
+                    // Reduce el stock basándose en la cantidad en el carrito
+                    cartItem.Product.Stock -= cartItem.Cantidad;
+
+                    // Asegúrate de que el stock no sea negativo
+                    cartItem.Product.Stock = cartItem.Product.Stock < 0 ? 0 : cartItem.Product.Stock;
+
+                    // Llama a SaveProduct para guardar los cambios en la base de datos
+                    await ProductService.SaveProduct(cartItem.Product);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error al actualizar el stock de {cartItem.Product.NombreP}: {ex.Message}");
+                }
+            }
+        }
+
+        // Limpia el carrito o redirige al usuario después de confirmar la compra
+        await LocalStorageService.SetItemAsync("cart", Productos);
+        NavigationManager.NavigateTo("/Checkout"); // Redirige a la página principal o de confirmación
+    }
+}
 }

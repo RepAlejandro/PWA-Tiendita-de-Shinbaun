@@ -4,14 +4,14 @@
     "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\Proyectotiendita.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\Proyectotiendita.csproj": {
+    "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\MongoAPIWEB.Model\\MongoAPIWeb.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\Proyectotiendita.csproj",
-        "projectName": "Proyectotiendita",
-        "projectPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\Proyectotiendita.csproj",
+        "projectUniqueName": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\MongoAPIWEB.Model\\MongoAPIWeb.Model.csproj",
+        "projectName": "MongoAPIWeb.Model",
+        "projectPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\MongoAPIWEB.Model\\MongoAPIWeb.Model.csproj",
         "packagesPath": "C:\\Users\\rdjrr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\obj\\",
+        "outputPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\MongoAPIWEB.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,88 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.WebUtilities": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\Proyectotiendita.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\Proyectotiendita.csproj",
+        "projectName": "Proyectotiendita",
+        "projectPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\Proyectotiendita.csproj",
+        "packagesPath": "C:\\Users\\rdjrr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rdjrr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\MongoAPIWEB.Model\\MongoAPIWeb.Model.csproj": {
+                "projectPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\MongoAPIWEB.Model\\MongoAPIWeb.Model.csproj"
+              },
+              "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\TiendaSModels\\TiendaSModels.csproj": {
+                "projectPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\TiendaSModels\\TiendaSModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
             "Blazored.LocalStorage": {
               "target": "Package",
               "version": "[4.5.0, )"
@@ -62,6 +144,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.AspNetCore.WebUtilities": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -112,6 +202,81 @@
       "runtimes": {
         "browser-wasm": {
           "#import": []
+        }
+      }
+    },
+    "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\TiendaSModels\\TiendaSModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\TiendaSModels\\TiendaSModels.csproj",
+        "projectName": "TiendaSModels",
+        "projectPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\TiendaSModels\\TiendaSModels.csproj",
+        "packagesPath": "C:\\Users\\rdjrr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\TiendaSModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rdjrr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.WebUtilities": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

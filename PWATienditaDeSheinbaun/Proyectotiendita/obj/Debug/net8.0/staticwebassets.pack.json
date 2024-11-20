@@ -1,103 +1,139 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\obj\\Debug\\net8.0\\compressed\\m0nt27pfoj.gz",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\obj\\Debug\\net8.0\\compressed\\m0nt27pfoj.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyectotiendita.styles.css",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyectotiendita.styles.css",
       "PackagePath": "staticwebassets\\Proyectotiendita.styles.css"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\obj\\Debug\\net8.0\\service-worker-assets.js",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\obj\\Debug\\net8.0\\service-worker-assets.js",
       "PackagePath": "staticwebassets\\service-worker-assets.js"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
       "PackagePath": "staticwebassets\\service-worker.js"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.css",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.css"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.json",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.json",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.json"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.min.css",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap-icons\\font\\bootstrap-icons.min.css"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\fonts\\bootstrap-icons.woff",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\fonts\\bootstrap-icons.woff",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap-icons\\font\\fonts\\bootstrap-icons.woff"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\fonts\\bootstrap-icons.woff2",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap-icons\\font\\fonts\\bootstrap-icons.woff2",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap-icons\\font\\fonts\\bootstrap-icons.woff2"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\icon-192.png",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\icon-512.png",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\icon-512.png",
       "PackagePath": "staticwebassets\\icon-512.png"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\img\\Camion.png",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\Camion.png",
       "PackagePath": "staticwebassets\\img\\Camion.png"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\img\\calcetines.jpg",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\banador.jpg",
+      "PackagePath": "staticwebassets\\img\\banador.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\bolso.png",
+      "PackagePath": "staticwebassets\\img\\bolso.png"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\calcetines.jpg",
       "PackagePath": "staticwebassets\\img\\calcetines.jpg"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\img\\camiseta.png",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\camiseta.png",
       "PackagePath": "staticwebassets\\img\\camiseta.png"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\img\\compradora.jpg",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\chaqueta.png",
+      "PackagePath": "staticwebassets\\img\\chaqueta.png"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\compradora.jpg",
       "PackagePath": "staticwebassets\\img\\compradora.jpg"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\img\\pantalon.jpg",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\gato.jpg",
+      "PackagePath": "staticwebassets\\img\\gato.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\gorra.png",
+      "PackagePath": "staticwebassets\\img\\gorra.png"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\mochila.jpg",
+      "PackagePath": "staticwebassets\\img\\mochila.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\pantalon.jpg",
       "PackagePath": "staticwebassets\\img\\pantalon.jpg"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\index.html",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\reloj.png",
+      "PackagePath": "staticwebassets\\img\\reloj.png"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\img\\zapatos.png",
+      "PackagePath": "staticwebassets\\img\\zapatos.png"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\js\\paypal.js",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\js\\Geolocation.js",
+      "PackagePath": "staticwebassets\\js\\Geolocation.js"
+    },
+    {
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\js\\paypal.js",
       "PackagePath": "staticwebassets\\js\\paypal.js"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\manifest.webmanifest",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\manifest.webmanifest",
       "PackagePath": "staticwebassets\\manifest.webmanifest"
     },
     {
-      "Id": "C:\\Users\\rdjrr\\source\\repos\\Proyectotiendita\\Proyectotiendita\\wwwroot\\sample-data\\weather.json",
+      "Id": "C:\\Users\\rdjrr\\source\\repos\\PWA-Tiendita-de-Shinbaun\\PWATienditaDeSheinbaun\\Proyectotiendita\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {

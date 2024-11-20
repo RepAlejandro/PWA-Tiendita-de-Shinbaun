@@ -1,4 +1,87 @@
 ﻿@page "/"
+@using Blazored.LocalStorage
+@using MongoAPIWeb.Model
+@inject IProductService ProductService
+@inject ILocalStorageService LocalStorageService
 
-<PageTitle>Home</PageTitle>
+<div class="container-fluid">
+    <PageTitle>Productos</PageTitle>
+    <h3 class="text-center">Escoge el producto que sea de tu preferencia</h3>
 
+    @if (products == null || !products.Any())
+    {
+        <p><em>No se encontraron productos.</em></p>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var product in products)
+            {
+                <div class="col">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="@product.Imagen" class="card-img-top rounded mx-auto d-block" alt="Imagen del producto">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.NombreP</h5>
+                            <p class="card-text">@product.Descripcion</p>
+                            <p class="card-text">Precio: @product.Precio $</p>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" @onclick="() => AddToCart(product)" disabled="@(product.Stock <= 0)" id="btncarrito">
+                                    @if (product.Stock <= 0)
+                                    { <span>Agotado</span>}
+                                    else{<span>Añadir al carrito</span>}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    IEnumerable<Products> products = Enumerable.Empty<Products>(); // Inicializar como vacío
+
+
+    //Obtener todos los productos
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            products = await ProductService.GetAllProducts();
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+
+
+    private async Task AddToCart(Products product)
+    {
+
+        if (product.Stock <= 0)
+        {
+            return; // No permite agregar si el stock es 0
+        }
+        var cart = await LocalStorageService.GetItemAsync<List<CartItem>>("cart");
+
+        if (cart == null)
+        {
+            cart = new List<CartItem>();
+        }
+
+        var existingItem = cart.FirstOrDefault(item => item.Product != null && item.Product.NombreP == product.NombreP);
+        //Si el item existe en el carrito y vuelves a dar click para añadir al carrito, entonces se agregará a la cantidad del producto dentro del carrito
+        if (existingItem != null)
+        {
+            existingItem.Cantidad++;
+        }
+        else
+        {
+
+            cart.Add(new CartItem { Product = product, Cantidad = 1 });
+        }
+
+        await LocalStorageService.SetItemAsync("cart", cart);
+    }
+}

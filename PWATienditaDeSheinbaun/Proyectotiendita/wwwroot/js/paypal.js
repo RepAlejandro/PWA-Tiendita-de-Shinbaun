@@ -1,28 +1,25 @@
-﻿// wwwroot/js/paypal.js
-window.initPayPalButton = function (createOrderUrl, captureOrderUrl) {
-    // Renderizar el botón de PayPal en el contenedor especificado
-    // Asegúrate de tener la librería de PayPal incluida
+﻿function initPayPalButton(totalCompra) {    
     paypal.Buttons({
+        //De manera forzosa, solo implementa el pago con tarjeta
+        fundingSource: paypal.FUNDING.CARD, 
         createOrder: function (data, actions) {
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: '0.01' // Cambia este valor por el monto de la compra
+                        value: totalCompra.toFixed(2)
                     }
                 }]
-            }).then(function (orderId) {
-                // Guarda el orderId para usarlo más adelante
-                console.log('Order ID:', orderId);
-                return orderId;
             });
         },
+
+        //Captura los detalles del usuario
         onApprove: function (data, actions) {
             return actions.order.capture().then(function (details) {
-                alert('Transaction completed by ' + details.payer.name.given_name);
+                alert('Pago realizado con éxito, ' + details.payer.name.given_name);
+                window.location.replace("https://localhost:44330/track-vehicle");
 
-                // Redirigir al usuario después de la transacción
-                window.location.replace("https://localhost:7044/Compra"); // Cambia la URL a donde quieres redirigir
             });
         }
     }).render('#paypal-button-container');
-};
+}
+    

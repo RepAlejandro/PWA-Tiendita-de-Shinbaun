@@ -1,16 +1,23 @@
-﻿@page "/Paypalbutton"
+﻿@page "/paypal-button"
 @inject IJSRuntime JSRuntime
 
 <div id="paypal-button-container"></div>
 
 @code {
+    [Parameter]
+    public decimal TotalCompra { get; set; }
+
+    // Variable para controlar cuando se puede inicializar el botón de PayPal
+    private bool isPayPalReady = false;
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            // Llama a la función de JavaScript para inicializar el botón de PayPal
-            await JSRuntime.InvokeVoidAsync("initPayPalButton", "/demo/checkout/api/paypal/order/create/", "/demo/checkout/api/paypal/order/");
+            await Task.Delay(2000); // Ajusta el tiempo del retraso según sea necesario
+            isPayPalReady = true;
+            StateHasChanged();
+            await JSRuntime.InvokeVoidAsync("initPayPalButton", TotalCompra);
         }
     }
-
 }

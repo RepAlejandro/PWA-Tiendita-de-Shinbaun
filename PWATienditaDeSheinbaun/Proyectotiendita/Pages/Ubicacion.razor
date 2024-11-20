@@ -1,0 +1,139 @@
+﻿@page "/track-vehicle"
+@inject IJSRuntime JSRuntime
+@inject Geolocalizacion geolocalizacion
+@inject NavigationManager Navigation
+
+<h3>Obtener Ubicación y Simular Traslado</h3>
+<div class="p-2">
+    <button class="btn-warning btn-lg d-flex mx-auto align-items-center border rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="bi bi-geo-fill"></i>
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Obtener Ubicación</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="black">Para brindarle su producto, necesitamos de su ubicación.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" @onclick="GetLocation">Obtener Ubicación</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="arrivalModal" tabindex="-1" aria-labelledby="arrivalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="arrivalModalLabel">¡Llegaron tus productos!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Los productos han llegado a su destino. Gracias por usar nuestro servicio.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="confirmArrival" @onclick="ConfirmArrival">Ya recibí mi paquete</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="map" style="height: 400px; width: 100%;"></div>
+
+@if (!string.IsNullOrEmpty(Location))
+{
+    <p>@Location</p>
+}
+
+@if (!string.IsNullOrEmpty(TravelRoute))
+{
+    <p>@TravelRoute</p>
+}
+
+@code {
+    private string Location;
+    private string TravelRoute;
+    private double Latitude;
+    private double Longitude;
+
+    private const double LatMacroplaza = 25.6718;
+    private const double LngMacroplaza = -100.3120;
+
+    [Parameter]
+    public EventCallback<string> OnLocationObtained { get; set; }
+
+    private object map;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Inicializamos el mapa al renderizar
+            await JSRuntime.InvokeVoidAsync("initializeMap");
+        }
+    }
+
+    private async Task GetLocation()
+    {
+        try
+        {
+            // Obtener la ubicación del usuario
+            var position = await JSRuntime.InvokeAsync<Lugar>("getUserLocation");
+            Latitude = position.Latitude;
+            Longitude = position.Longitude;
+            Location = $"Latitud: {Latitude}, Longitud: {Longitude}";
+
+            // Actualizar destino en el mapa
+            await JSRuntime.InvokeVoidAsync("updateDestination", Latitude, Longitude);
+
+            // Simular traslado entre Macroplaza y la ubicación del usuario
+            await JSRuntime.InvokeVoidAsync("simulateRoute", LatMacroplaza, LngMacroplaza, Latitude, Longitude);
+        }
+        catch (Exception ex)
+        {
+            Location = $"Error: {ex.Message}";
+        }
+    }
+
+    private async Task SimulateRoute(double latA, double lngA, double latB, double lngB)
+    {
+        try
+        {
+            var functionExists = await JSRuntime.InvokeAsync<bool>("eval", "typeof simulateRoute !== 'undefined'");
+            if (functionExists)
+            {
+                await JSRuntime.InvokeVoidAsync("simulateRoute", latA, lngA, latB, lngB);
+                TravelRoute = "Ruta simulada con éxito";
+            }
+            else
+            {
+                TravelRoute = "Función 'simulateRoute' no está definida en JavaScript.";
+            }
+        }
+        catch (Exception ex)
+        {
+            TravelRoute = $"Error al obtener la ruta: {ex.Message}";
+        }
+    }
+
+    public class Lugar
+    {
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+    }
+
+
+
+    private async Task ConfirmArrival()
+    {        // Redirigir al usuario o mostrar un mensaje de confirmación
+        Navigation.NavigateTo("/");
+    }
+
+
+
+}
